@@ -1,462 +1,491 @@
 <div class="client-form-container">
-    <div class="form-content-wrapper">
-        <form [formGroup]="clientForm">
-            <!-- Header Section -->
-            <!-- Header Section -->
-            <div class="form-header">
-                <div class="header-row">
-                    <div class="field-group">
-                        <label>Client ID</label>
-                        <input type="text" formControlName="clientId" />
-                        <button type="button" class="search-btn">🔍</button>
-                    </div>
-
-                    <div class="field-group">
-                        <label>Client Type</label>
-                        <select formControlName="clientType">
-                            <option value="">Select</option>
-                            <option *ngFor="let type of clientTypes" [value]="type">{{ type }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="header-row">
-                    <div class="field-group empty-space">
-                        <!-- Empty space to align with Client ID -->
-                    </div>
-
-                    <div class="field-group">
-                        <label>Segment Type</label>
-                        <select formControlName="segmentType">
-                            <option value="">Select</option>
-                            <option *ngFor="let type of segmentTypes" [value]="type">{{ type }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="header-row">
-                    <div class="field-group empty-space">
-                        <!-- Empty space to align with Client ID -->
-                    </div>
-
-                    <div class="field-group">
-                        <label>Sub-Segment Type</label>
-                        <select formControlName="subSegmentType">
-                            <option value="">Select</option>
-                            <option *ngFor="let type of subSegments" [value]="type">{{ type }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="header-row">
-                    <div class="field-group">
-                        <label>Application ID</label>
-                        <input type="text" formControlName="applicationId" />
-                        <button type="button" class="search-btn">🔍</button>
-                    </div>
-
-                    <div class="field-group">
-                        <label>Client Classification</label>
-                        <input type="text" formControlName="clientClassification" class="full-width-input" />
-                    </div>
-                </div>
-
-                <div class="header-row">
-                    <div class="field-group full-width">
-                        <label>Client Name</label>
-                        <input type="text" formControlName="clientName" class="full-width-input" />
-                        <button type="button" class="search-btn">🔍</button>
-                    </div>
-                </div>
-
-                <div class="header-row">
-                    <div class="field-group">
-                        <label>Base ID</label>
-                        <input type="text" formControlName="baseId" class="medium-input" />
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tabs Section -->
-            <mat-tab-group class="client-tabs">
-                <!-- Corporate Details Tab -->
-                <mat-tab label="Corporate Details">
-                    <div class="tab-content" formGroupName="corporateDetails">
-                        <div class="section-header">Corporate Details</div>
-
-                        <div class="form-grid">
-                            <div class="field-row">
-                                <label class="field-label">Company Name</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="companyName" />
-                                </div>
-
-                                <label class="field-label">Line Of Business</label>
-                                <div class="field-input-group">
-                                    <select formControlName="lineOfBusiness">
-                                        <option value="">Select</option>
-                                        <option value="Proprietary">Proprietary</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Line Of Business More Info</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="lineOfBusinessMoreInfo" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Nature Of Business</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="natureOfBusiness" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Identification Type</label>
-                                <div class="field-input-group">
-                                    <select formControlName="identificationType">
-                                        <option value="">--Select--</option>
-                                    </select>
-                                </div>
-
-                                <label class="field-label">Date Of Registration</label>
-                                <div class="field-input-group">
-                                    <select formControlName="dateOfRegistration">
-                                        <option value="">--Select--</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Registration No.</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="registrationNo" />
-                                </div>
-
-                                <label class="field-label">Registered Office</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="registeredOffice" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Registered At</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="registeredAt" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Business Started Year</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="businessStartedYear" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">No Of Employees / Members</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="noOfEmployees" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Comments</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="comments" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">WebSite</label>
-                                <div class="field-input-group span-2">
-                                    <input type="text" formControlName="website" />
-                                </div>
-                                <button type="button" class="search-btn">🔍</button>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Opened By</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="openedBy" />
-                                </div>
-
-                                <label class="field-label">Opened On</label>
-                                <div class="field-input-group">
-                                    <select formControlName="openedOn">
-                                        <option value="">--Select--</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Relationship Manager</label>
-                                <div class="field-input-group">
-                                    <select formControlName="relationshipManager">
-                                        <option value="">--Select--</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">TIN Number</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="tinNumber" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </mat-tab>
-
-                <!-- Address Tab -->
-                <mat-tab label="Address">
-                    <div class="tab-content" formGroupName="addresses">
-                        <div class="section-header">Mailing Address</div>
-
-                        <div class="form-grid">
-                            <div class="field-row">
-                                <label class="field-label">Residential Address</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="residentialAddress" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Business Address</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="businessAddress" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Office Address</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="officeAddress" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Mailing Address</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="mailingAddress" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Home Country Address</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="homeCountryAddress" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Address 2</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="address2" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Region</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="region" />
-                                </div>
-
-                                <label class="field-label">Street</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="street" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Country</label>
-                                <div class="field-input-group">
-                                    <select formControlName="country">
-                                        <option value="">Select</option>
-                                        <option value="Tanzania">Tanzania</option>
-                                    </select>
-                                </div>
-
-                                <label class="field-label">Zip Code</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="zipCode" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Region</label>
-                                <div class="field-input-group">
-                                    <select formControlName="regionSelect">
-                                        <option value="">Select</option>
-                                        <option value="ARUSHA">ARUSHA</option>
-                                    </select>
-                                </div>
-
-                                <label class="field-label">Phone(Home)</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="phoneHome" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Ward</label>
-                                <div class="field-input-group">
-                                    <select formControlName="ward">
-                                        <option value="">Select</option>
-                                        <option value="BOMAHBUZI">BOMAHBUZI</option>
-                                    </select>
-                                </div>
-
-                                <label class="field-label">District</label>
-                                <div class="field-input-group">
-                                    <select formControlName="district">
-                                        <option value="">Select</option>
-                                        <option value="HAI">HAI</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Phone(Work)</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="phoneWork" />
-                                </div>
-
-                                <label class="field-label">Mobile</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="mobile" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Fax No</label>
-                                <div class="field-input-group">
-                                    <input type="text" formControlName="faxNo" />
-                                </div>
-
-                                <label class="field-label">Email ID</label>
-                                <div class="field-input-group">
-                                    <input type="email" formControlName="email" />
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <label class="field-label">Land Mark</label>
-                                <div class="field-input-group span-3">
-                                    <input type="text" formControlName="landMark" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </mat-tab>
-
-                <!-- Special Offers Tab -->
-                <mat-tab label="SpecialOffers">
-                    <div class="tab-content" formGroupName="specialOffers">
-                        <div class="section-header">Special Offers</div>
-
-                        <div class="checkbox-container">
-                            <mat-checkbox formControlName="sendGreetings">Can Send Greetings</mat-checkbox>
-                            <mat-checkbox formControlName="associateOffers">Can Send Associate Special
-                                Offer</mat-checkbox>
-                            <mat-checkbox formControlName="ourOffers">Can Send Our Special Offers</mat-checkbox>
-                            <mat-checkbox formControlName="statementOnline">Statement Online</mat-checkbox>
-                            <mat-checkbox formControlName="mobileAlert">Mobile Alert</mat-checkbox>
-                        </div>
-                    </div>
-                </mat-tab>
-
-                <!-- Directors Details Tab -->
-                <mat-tab label="Directors Details">
-                    <div class="tab-content">
-                        <div class="section-header">Directors Details</div>
-
-                        <div class="table-container">
-                            <table class="directors-table">
-                                <thead>
-                                    <tr>
-                                        <th>Client Name</th>
-                                        <th>Relation</th>
-                                        <th>Share (%)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="3" class="no-records">No records to display.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
-
-            <!-- Behind The Scene Section -->
-            <div class="audit-section" formGroupName="audit">
-                <div class="section-header-audit">Behind The Scene</div>
-
-                <div class="audit-grid">
-                    <div class="audit-field">
-                        <label>Status</label>
-                        <input type="text" formControlName="status" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Open Date</label>
-                        <input type="text" formControlName="openDate" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Closed Date</label>
-                        <input type="text" formControlName="closedDate" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Created By</label>
-                        <input type="text" formControlName="createdBy" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Modified By</label>
-                        <input type="text" formControlName="modifiedBy" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Supervised By</label>
-                        <input type="text" formControlName="supervisedBy" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Created On</label>
-                        <input type="text" formControlName="createdOn" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Modified On</label>
-                        <input type="text" formControlName="modifiedOn" readonly />
-                    </div>
-
-                    <div class="audit-field">
-                        <label>Supervised On</label>
-                        <input type="text" formControlName="supervisedOn" readonly />
-                    </div>
-                </div>
-            </div>
-
-        </form>
+    <div class="window-controls">
+        <div class="window-title"></div>
+        <div class="window-buttons">
+            <button class="window-btn reload-btn" title="Reload">⟳</button>
+            <button class="window-btn minimize-btn" title="Minimize">−</button>
+            <button class="window-btn close-btn" title="Close">✕</button>
+        </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="action-buttons">
-        <button type="button" class="btn-action">View</button>
-        <button type="button" class="btn-action">Add</button>
-        <button type="button" class="btn-action">Edit</button>
-        <button type="button" class="btn-action">Close</button>
-        <button type="button" class="btn-action btn-save" (click)="save()">Save</button>
-        <button type="button" class="btn-action" (click)="cancel()">Cancel</button>
-    </div>
+    <div class="main-content">
+        <div class="form-content-wrapper">
+            <form [formGroup]="clientForm">
+                <div class="form-header">
+                    <div class="header-row">
+                        <div class="field-group">
+                            <label>Client ID</label>
+                            <input type="text" formControlName="clientId" />
+                            <button type="button" class="search-btn">🔍</button>
+                        </div>
 
+                        <div class="field-group">
+                            <label>Client Type</label>
+                            <select formControlName="clientType">
+                                <option value="">Select</option>
+                                <option *ngFor="let type of clientTypes" [value]="type">{{ type }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="header-row">
+                        <div class="field-group empty-space">
+                        </div>
+
+                        <div class="field-group">
+                            <label>Segment Type</label>
+                            <select formControlName="segmentType">
+                                <option value="">Select</option>
+                                <option *ngFor="let type of segmentTypes" [value]="type">{{ type }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="header-row">
+                        <div class="field-group empty-space">
+                        </div>
+
+                        <div class="field-group">
+                            <label>Sub-Segment Type</label>
+                            <select formControlName="subSegmentType">
+                                <option value="">Select</option>
+                                <option *ngFor="let type of subSegments" [value]="type">{{ type }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="header-row">
+                        <div class="field-group">
+                            <label>Application ID</label>
+                            <input type="text" formControlName="applicationId" />
+                            <button type="button" class="search-btn">🔍</button>
+                        </div>
+
+                        <div class="field-group">
+                            <label>Client Classification</label>
+                            <input type="text" formControlName="clientClassification" class="full-width-input" />
+                        </div>
+                    </div>
+
+                    <div class="header-row">
+                        <div class="field-group full-width">
+                            <label>Client Name</label>
+                            <input type="text" formControlName="clientName" class="full-width-input" />
+                            <button type="button" class="search-btn">🔍</button>
+                        </div>
+                    </div>
+
+                    <div class="header-row">
+                        <div class="field-group">
+                            <label>Base ID</label>
+                            <input type="text" formControlName="baseId" class="medium-input" />
+                        </div>
+                    </div>
+                </div>
+
+                <mat-tab-group class="client-tabs" #tabGroup>
+                    <mat-tab label="Corporate Details">
+                        <div class="tab-content" formGroupName="corporateDetails">
+                            <div class="section-header">Corporate Details</div>
+
+                            <div class="form-grid">
+                                <div class="field-row">
+                                    <label class="field-label">Company Name</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="companyName" />
+                                    </div>
+
+                                    <label class="field-label">Line Of Business</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="lineOfBusiness">
+                                            <option value="">Select</option>
+                                            <option value="Proprietary">Proprietary</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Line Of Business More Info</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="lineOfBusinessMoreInfo" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Nature Of Business</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="natureOfBusiness" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Identification Type</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="identificationType">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="field-label">Date Of Registration</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="dateOfRegistration">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Registration No.</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="registrationNo" />
+                                    </div>
+
+                                    <label class="field-label">Registered Office</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="registeredOffice" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Registered At</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="registeredAt" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Business Started Year</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="businessStartedYear" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">No Of Employees / Members</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="noOfEmployees" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Comments</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="comments" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">WebSite</label>
+                                    <div class="field-input-group span-2">
+                                        <input type="text" formControlName="website" />
+                                    </div>
+                                    <button type="button" class="search-btn">🔍</button>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Opened By</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="openedBy" />
+                                    </div>
+
+                                    <label class="field-label">Opened On</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="openedOn">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Relationship Manager</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="relationshipManager">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">TIN Number</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="tinNumber" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+
+                    <mat-tab label="Address">
+                        <div class="tab-content" formGroupName="addresses">
+                            <div class="section-header">Mailing Address</div>
+
+                            <div class="form-grid">
+                                <div class="field-row">
+                                    <label class="field-label">Residential Address</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="residentialAddress" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Business Address</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="businessAddress" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Office Address</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="officeAddress" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Mailing Address</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="mailingAddress" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Home Country Address</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="homeCountryAddress" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Address 2</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="address2" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Region</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="region" />
+                                    </div>
+
+                                    <label class="field-label">Street</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="street" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Country</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="country">
+                                            <option value="">Select</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="field-label">Zip Code</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="zipCode" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Region</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="regionSelect">
+                                            <option value="">Select</option>
+                                            <option value="ARUSHA">ARUSHA</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="field-label">Phone(Home)</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="phoneHome" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Ward</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="ward">
+                                            <option value="">Select</option>
+                                            <option value="BOMAHBUZI">BOMAHBUZI</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="field-label">District</label>
+                                    <div class="field-input-group">
+                                        <select formControlName="district">
+                                            <option value="">Select</option>
+                                            <option value="HAI">HAI</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Phone(Work)</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="phoneWork" />
+                                    </div>
+
+                                    <label class="field-label">Mobile</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="mobile" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Fax No</label>
+                                    <div class="field-input-group">
+                                        <input type="text" formControlName="faxNo" />
+                                    </div>
+
+                                    <label class="field-label">Email ID</label>
+                                    <div class="field-input-group">
+                                        <input type="email" formControlName="email" />
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    <label class="field-label">Land Mark</label>
+                                    <div class="field-input-group span-3">
+                                        <input type="text" formControlName="landMark" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+
+                    <!-- Special Offers Tab -->
+                    <mat-tab label="SpecialOffers">
+                        <div class="tab-content" formGroupName="specialOffers">
+                            <div class="section-header">Special Offers</div>
+
+                            <div class="special-offers-grid">
+                                <div class="offer-row">
+                                    <label class="offer-label">Can Send Greetings</label>
+                                    <mat-checkbox formControlName="sendGreetings"></mat-checkbox>
+                                </div>
+
+                                <div class="offer-row">
+                                    <label class="offer-label">Can Send Associate Special Offer</label>
+                                    <mat-checkbox formControlName="associateOffers"></mat-checkbox>
+                                </div>
+
+                                <div class="offer-row">
+                                    <label class="offer-label">Can Send Our Special Offers</label>
+                                    <mat-checkbox formControlName="ourOffers"></mat-checkbox>
+                                </div>
+
+                                <div class="offer-row">
+                                    <label class="offer-label">Statement Online</label>
+                                    <mat-checkbox formControlName="statementOnline"></mat-checkbox>
+                                </div>
+
+                                <div class="offer-row">
+                                    <label class="offer-label">Mobile Alert</label>
+                                    <mat-checkbox formControlName="mobileAlert"></mat-checkbox>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+
+                    <!-- Directors Details Tab -->
+                    <mat-tab label="Directors Details">
+                        <div class="tab-content">
+                            <div class="section-header">Directors Details</div>
+
+                            <div class="table-container">
+                                <table class="directors-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Client Name</th>
+                                            <th>Relation</th>
+                                            <th>Share (%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3" class="no-records">No records to display.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+
+                <!-- Behind The Scene Section -->
+                <div class="audit-section" formGroupName="audit">
+                    <div class="section-header-audit">Behind The Scene</div>
+
+                    <div class="audit-grid">
+                        <div class="audit-field">
+                            <label>Status</label>
+                            <input type="text" formControlName="status" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Open Date</label>
+                            <input type="text" formControlName="openDate" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Closed Date</label>
+                            <input type="text" formControlName="closedDate" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Created By</label>
+                            <input type="text" formControlName="createdBy" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Modified By</label>
+                            <input type="text" formControlName="modifiedBy" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Supervised By</label>
+                            <input type="text" formControlName="supervisedBy" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Created On</label>
+                            <input type="text" formControlName="createdOn" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Modified On</label>
+                            <input type="text" formControlName="modifiedOn" readonly />
+                        </div>
+
+                        <div class="audit-field">
+                            <label>Supervised On</label>
+                            <input type="text" formControlName="supervisedOn" readonly />
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="sidebar-container">
+            <div class="nav-arrows">
+                <button class="arrow-btn" title="Previous" (click)="previousTab()" [disabled]="isFirstTab">
+                    <div class="arrow-icon left"></div>
+                </button>
+                <button class="arrow-btn" title="Next" (click)="nextTab()" [disabled]="isLastTab">
+                    <div class="arrow-icon right"></div>
+                </button>
+            </div>
+            <div class="action-buttons">
+                <button type="button" class="btn-action btn-bold">View</button>
+                <button type="button" class="btn-action btn-bold">Add</button>
+                <button type="button" class="btn-action">Edit</button>
+                <button type="button" class="btn-action">Close</button>
+                <button type="button" class="btn-action" (click)="save()">Save</button>
+                <button type="button" class="btn-action btn-bold" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
 </div>
